@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Product Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            background-color: #151E25;
+            color: white;
+        }
+        .modal-content {
+            background-color: #151E25;
+            color: white;
+        }
+        .product-image {
+            max-width: 100px;
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="container my-5">
+        <!-- Dress Collection Section -->
+        <h1 class="text-center mb-4">Creed fragrances</h1>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <img src="./Assets/creed-perfume-1.avif" alt="Dress 1">
+                    <div class="product-info">
+                        <h5>Timeless A-line Evening Dress</h5>
+                        <p>Fit: Ankle-length</p>
+                        <p>Price: $109.99</p>
+                        <button class="btn btn-shop" onclick="showModal('Timeless A-line Evening Dress', './Assets/creed-perfume-1.avif', '$109.99')">Add Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <img src="./Assets/creed-perfume-2.avif" alt="Dress 2">
+                    <div class="product-info">
+                        <h5>Floral Bloom Maxi Dress</h5>
+                        <p>Fit: Slim Fit</p>
+                        <p>Price: $54.99</p>
+                        <button class="btn btn-shop" onclick="showModal('Floral Bloom Maxi Dress', './Assets/creed-perfume-2.avif', '$54.99')">Add Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <img src="./Assets/creed-perfume-3.avif" alt="Dress 3">
+                    <div class="product-info">
+                        <h5>Elegant Evening Gown</h5>
+                        <p>Fit: Flowing skirt</p>
+                        <p>Price: $89.99</p>
+                        <button class="btn btn-shop" onclick="showModal('Elegant Evening Gown', './Assets/creed-perfume-3.avif', '$89.99')">Add Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accessories Section -->
+        <h1 class="text-center mb-4">Bonanza satrangi</h1>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <img src="./Assets/bonanza-perfume-1.jpg" alt="Accessory 1">
+                    <div class="product-info">
+                        <h5>Wide-Brim Bucket Hat</h5>
+                        <p>Fit: Any face shape</p>
+                        <p>Price: $69.99</p>
+                        <button class="btn btn-shop" onclick="showModal('Wide-Brim Bucket Hat', './Assets/bonanza-perfume-1.jpg', '$69.99')">Add Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <img src="./Assets/bonanza-perfume-2.jpg" alt="Accessory 2">
+                    <div class="product-info">
+                        <h5>Sophisticate Sun Hat</h5>
+                        <p>Fit: One size fits all</p>
+                        <p>Price: $24.99</p>
+                        <button class="btn btn-shop" onclick="showModal('Sophisticate Sun Hat', './Assets/bonanza-perfume-2.jpg', '$24.99')">Add Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <img src="./Assets/bonanza-perfume-3.png" alt="Accessory 3">
+                    <div class="product-info">
+                        <h5>Timeless Fedora</h5>
+                        <p>Fit: Any face shape</p>
+                        <p>Price: $79.99</p>
+                        <button class="btn btn-shop" onclick="showModal('Timeless Fedora', './Assets/bonanza-perfume-3.png', ' $79.99')">Add Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bags and Handbags Section -->
+        <h1 class="text-center mb-4">Scents N Stories</h1>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <img src="./Assets/scene-perfume-1.png" alt="Bag 1">
+                    <div class="product-info">
+                        <h5>Bold Backpack</h5>
+                        <p>Fit: Roomy interior</p>
+                        <p>Price: $129.99</p>
+                        <button class="btn btn-shop" onclick="showModal('Bold Backpack', './Assets/scene-perfume-1.png', '$129.99')">Add Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <img src="./Assets/scene-perfume-2.png" alt="Bag 2">
+                    <div class="product-info">
+                        <h5>Night Out Glam</h5>
+                        <p>Fit: Compact size</p>
+                        <p>Price: $79.99</p>
+                        <button class="btn btn-shop" onclick="showModal('Night Out Glam', './Assets/scene-perfume-2.png', '$79.99')">Add Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <img src="./Assets/scene-perfume-3.png" alt="Bag 3">
+                    <div class="product-info">
+                        <h5>Urban Chic Handbag</h5>
+                        <p>Fit: Spacious</p>
+                        <p>Price: $49.99</p>
+                        <button class="btn btn-shop" onclick="showModal('Urban Chic Handbag', './Assets/scene-perfume-3.png', '$49.99')">Add Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Added to Your Cart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="cron" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="productImage" src="" alt="Product" class="product-image mb-3">
+                    <h5 id="productName"></h5>
+                    <p id="productPrice"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="nue" data-dismiss="modal">Continue Shopping</button>
+                    <a href="./card.html"><button type="button" class="btn btn-primary" id="nue">View Cart</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ee-mor">
+        <button>See More</button>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+       function showModal(productName, productImage, productPrice) {
+    // Set the product details in the modal
+    document.getElementById('productName').innerText = productName;
+    document.getElementById('productImage').src = productImage;
+    document.getElementById('productPrice').innerText = `Price: ${productPrice}`;
+
+    // Store the product information in localStorage
+    localStorage.setItem('productName', productName);
+    localStorage.setItem('productImage', productImage);
+    localStorage.setItem('productPrice', productPrice);
+
+    // Open the modal
+    $('#productModal').modal('show');
+}
+
+    </script>
+</body>
+</html>

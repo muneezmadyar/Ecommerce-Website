@@ -1,0 +1,855 @@
+@import url('https://fonts.googleapis.com/css2?family=Amarante&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amarante&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    background-color: #151E25;
+}
+
+.section-com-1 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-nav .off .navbar-brand{
+    color: #ffffff;
+    font-family: "Amarante", serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.section-nav .off ul li a{
+    color: white !important;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 2.5rem ;
+    padding-left: .5rem;
+}
+
+.section-com-1 .bottle img{
+    width: 100%;
+}
+#aling{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.section-com-1 .hero-text h1 {
+    text-align: center;
+    color: white;
+    font-size: 59px;
+    font-weight: 400;
+    line-height: 75px;
+    font-family: "Amarante", serif;
+}
+.section-com-1 .hero-text p{
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 28px;
+    font-family: "Inter", sans-serif;
+   
+}
+.section-com-1 .hero-text a{
+    text-decoration: none;
+}
+.section-com-1 .hero-text button {
+    margin: 5% auto 0;
+    display: block;
+    font-family: "Amarante", serif;
+    padding: 10px 40px;
+    border: 1px solid #F5D57A;
+    background: transparent;
+    color: #F5D57A;
+
+}
+/* section-com-2 */
+.section-com-2{
+    margin: 10% 0 0;
+}
+.section-com-2 .story h1{
+    color: white;
+    font-size: 59px;
+    font-weight: 400;
+    line-height: 75px;
+    font-family: "Amarante", serif;
+
+}
+
+.section-com-2 .story p{
+    color: white;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 27px;
+    font-family: "Inter", sans-serif;
+}
+
+.section-com-2 .story button{
+    margin: 5% 0 0;
+    display: block;
+    font-family: "Amarante", serif;
+    padding: 10px 40px;
+    border: 1px solid #F5D57A;
+    background: transparent;
+    color: #F5D57A;
+}
+.sto-img{
+    width: 360px;
+    margin: 0 auto;
+}
+
+.sto-img img {
+    width: 100%;
+}
+
+/* section-com-3 */
+
+.section-com-3{
+    margin: 10% 0 0;
+}
+.section-com-3 .product{
+    color: white;
+    text-align: center;
+    font-size: 68px;
+    font-weight: 400;
+    line-height: 85px;
+    font-family: "Amarante", serif;
+}
+.section-com-3 .spicy {
+    width: 100%;
+    height: 550px;
+    border: 1px solid #F5D57A;
+    text-align: center;
+    padding: 40px 0;
+}
+.section-com-3 .spicy img{
+    width: 210px;
+    height: 300px;
+}
+.section-com-3 .spicy h1{
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 29px;
+    color: white;
+    font-family: "Amarante", serif;
+    margin: 5% 0;
+}
+.section-com-3 .spicy p{
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 32px;
+    color: white;
+    font-family: "Inter", sans-serif;
+    margin: 5% 0;
+}
+.section-com-3 .spicy a{
+    text-decoration: none;
+}
+.section-com-3 .spicy button{
+    margin: 5% auto 0;
+    display: block;
+    font-family: "Amarante", serif;
+    padding: 10px 40px;
+    border: 1px solid #F5D57A;
+    background: transparent;
+    color: #F5D57A;
+}
+#oper{
+    margin: 5% auto 0;
+}
+.section-com-3 a{
+    text-decoration: none;
+}
+.orr {
+    margin: 5% auto 0;
+    display: block;
+    font-family: "Amarante", serif;
+    padding: 10px 40px;
+    border: 1px solid #F5D57A;
+    background: transparent;
+    color: #F5D57A;
+    width: 170px;
+}
+
+/* section-com-4 */
+
+.section-com-4{
+    margin: 10% 0 0;
+}
+
+.section-com-4 .limi-img{
+    width: 350px;
+    /* margin: 0 auto; */
+}
+
+.section-com-4 .limi-img img{
+    width: 100%;
+}
+
+.section-com-4 .limited h1{
+    color: white;
+    font-size: 59px;
+    font-weight: 400;
+    line-height: 75px;
+    font-family: "Amarante", serif;
+}
+
+.section-com-4 .limited p{
+    color: white;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 27px;
+    font-family: "Inter", sans-serif;
+}
+.section-com-4 .limited a{
+    text-decoration: none;
+}
+
+.section-com-4 .limited button{
+    margin: 5% 0 0;
+    display: block;
+    font-family: "Amarante", serif;
+    padding: 10px 40px;
+    border: 1px solid #F5D57A;
+    background: transparent;
+    color: #F5D57A;
+}
+
+/* section-com-5 */
+
+.section-com-5{
+    margin: 10% 0 0;
+}
+
+.section-com-5 h1{
+    font-family: "Amarante", serif;
+    text-align: center;
+    font-size: 68px;
+    font-weight: 400;
+    line-height: 85px;
+    color: white;
+}
+
+.section-com-5 .testimonial-card {
+    width: 350px;
+    height: 430px;
+    border: 1px solid #F5D57A;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0 0;
+    background-color: transparent;
+    color: white;
+
+}
+.section-com-5 .testimonial-card .card-content img{
+  margin: 2% auto;
+}
+
+.section-com-5 .testimonial-card .card-content h2{
+    margin: 5% 0 0;
+}
+
+.section-com-5 .testimonial-card .card-content p {
+    margin: 5% auto 0;
+    width: 300px;
+    /* color: #d88a1e; */
+}
+
+.section-com-5 .testimonial-card .card-content a{
+    margin:  3% auto 0;
+    display: block;
+    font-family: "Amarante", serif;
+    padding: 10px 40px;
+    /* border: 1px solid #F5D57A; */
+    background: transparent;
+    color: #F5D57A;
+}
+
+.section-com-5 .slider1{
+    margin: 5% 0 0;
+}
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0 !important;
+}
+
+/* section-com-6 */
+
+.section-com-6{
+    margin: 10% 0 0;
+}
+
+.section-com-6 .mation{
+    font-family: "Amarante", serif;
+    text-align: center;
+    font-size: 68px;
+    font-weight: 400;
+    line-height: 85px;
+    color: white;
+}
+.section-com-6 .feel h3{
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: center;
+    color: white;
+    font-family: "Amarante", serif;
+    margin: 5% 0;
+}
+.section-com-6 .container {
+    border: 1px solid #F5D57A;
+    border-radius: 18px;
+    padding: 50px 50px;
+}
+
+.section-com-6 .feel h1{
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 33px;
+    text-align: center;
+    color: white;
+    font-family: "Amarante", serif;
+    text-transform: uppercase;
+    margin: 5% 0;
+}
+
+
+.section-com-6 .feel .inpu-sig{
+    display: flex;
+    justify-content: center;
+    margin: 8% 0;
+}
+.section-com-6 .feel .inpu-sig input {
+    padding: 10px 20px;
+    width: 350px;
+    border: 1px solid #F5D57A;
+    background-color: transparent;
+    border-radius: 4px;
+    color: white;
+    outline: none;
+}
+.section-com-6 .feel .inpu-sig input::placeholder{
+    color: white;
+    font-family: "Inter", sans-serif;
+}
+.section-com-6 .feel .inpu-sig input:focus{
+    border: 1px solid #F5D57A;
+    width: 350px;
+    outline: none;
+}
+
+.section-com-6 .feel .inpu-sig button {
+    width: 144px;
+    height: 50px;
+    background-color: #40E0D0;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: center;
+    font-family: "Amarante", serif;
+    margin: 0 0% 0 -1%;
+}
+
+.section-com-6 .feel p{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: center;
+    color: white;
+    font-family: "Inter", sans-serif;   
+}
+.section-com-6 .heer{
+    text-align: center;
+}
+.section-com-6 .heer h4{
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: center;
+    color: white;
+    font-family: "Amarante", serif;
+    margin: 5% 0;
+}
+
+.section-com-6 .heer h1{
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 52px;
+    text-align: center;
+    color: white;
+    font-family: "Amarante", serif;
+    text-transform: uppercase;
+    margin: 5% 0;
+}
+
+.section-com-6 .heer p{
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: center;
+    color: white;
+    font-family: "Inter", sans-serif; 
+    margin-bottom: 5%;
+}
+
+.section-com-6 .heer a{
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 35px;
+    text-align: center;
+    color: white;
+    font-family: "Amarante", serif;
+    text-decoration: none;
+    border-bottom: 1px solid #F5D57A;
+}
+
+/* section-com-7 */
+
+.section-com-7{
+    margin: 10% 0 0;
+   
+}
+
+.section-com-7 .container{
+    border-top: 1px solid #FFFFFF4D;
+}
+.section-com-7 .row{
+    margin: 5% 0;
+}
+
+.section-com-7 .f-logo h1{
+    color: #ffffff;
+    font-family: "Amarante", serif;
+    font-size: 73px;
+    font-weight: 400;
+    line-height: 88px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: end;
+    padding: 20px;
+    color: #fff;
+    /* font-family: Arial, sans-serif; */
+}
+
+.footer-column {
+    width: 30%;
+}
+
+.footer-column h3 {
+    margin-bottom: 10%;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 27px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: "Amarante", serif;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    font-family: "Inter", sans-serif;
+}
+
+.footer-column ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    font-family: "Inter", sans-serif; 
+
+}
+
+.footer-column ul li a:hover {
+    color: #fff;
+}
+
+.footer-column ul li i {
+    margin-right: 8px;
+    color: #ccc;
+}
+
+.copy{
+    border-top: 1px solid #FFFFFF4D;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding-top: 20px;
+}
+
+.copy .copy-icon{
+    display: flex;
+    gap: 1em;
+}
+
+/* <-------------------------product.css--------------------------------------> */
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product-info h5 {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 35px;
+    text-align: center;
+    color: white;
+    font-family: "Amarante", serif;
+    text-decoration: none;
+}
+
+.product-info p {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 16px;
+    font-family: "Inter", sans-serif;
+}
+
+.btn-shop {
+    margin: 5% auto 0 !important;
+    display: block;
+    font-family: "Amarante", serif;
+    padding: 10px 40px !important;
+    border: 1px solid #F5D57A !important;
+    background: transparent !important;
+    color: #F5D57A !important;
+}
+
+.btn-shop:hover {
+    /* background-color: #333; */
+}
+.text-center{
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 52px;
+    text-align: center;
+    color: white;
+    font-family: "Amarante", serif;
+    text-transform: uppercase;
+    margin: 5% 0;
+}
+#nue{
+    /* margin: 5% auto 0 !important; */
+    display: block;
+    font-family: "Amarante", serif;
+    padding: 10px 30px !important;
+    border: 1px solid #F5D57A !important;
+    background: transparent !important;
+    color: #F5D57A !important;
+}
+.cron{
+    color: #F5D57A;
+    outline: none;
+}
+
+.ee-mor button{
+    margin: 3% auto 2%;
+    display: block;
+    font-family: "Amarante", serif;
+    padding: 10px 40px;
+    border: 1px solid #F5D57A;
+    background: transparent;
+    color: #F5D57A;
+}
+/* <-------------------------product.css--------------------------------------> */
+
+@media only screen and (min-width:320px) and (max-width:991px){
+    .sto-img {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .section-com-4 .limi-img {
+        width: 100%;
+        /* margin: 0 auto; */
+    }
+    .section-com-6 .mation {
+        font-family: "Amarante", serif;
+        text-align: center;
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 85px;
+        color: white;
+    }
+    .section-com-5 .testimonial-card {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #F5D57A;
+        text-align: center;
+        padding: 20px 0px;
+        margin: 0 0px;
+        background-color: transparent;
+        color: white;
+    }
+    .section-com-5 .testimonial-card .card-content p {
+        margin: 5% auto 0;
+        width: 100%;
+        /* color: #d88a1e; */
+    }
+    .navbar {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+       padding: 10px 0 !important;
+    }
+    .navbar-light .navbar-toggler-icon {
+        background-image: url(./Assets/toogle.png);
+        width: 50px;
+        background-size: cover;
+        background-position: center;
+    }
+    .section-com-1 {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .section-com-1 .hero-text h1 {
+        text-align: center;
+        color: white;
+        font-size: 35px;
+        font-weight: 400;
+        line-height: 47px;
+        font-family: "Amarante", serif;
+    }
+    .section-com-1 .hero-text p {
+        text-align: center;
+        color: white;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 23px;
+        font-family: "Inter", sans-serif;
+    }
+    .navbar-toggler:focus {
+        text-decoration: none;
+        outline: 0;
+        box-shadow: none;
+    }
+    .section-com-2 .story h1 {
+        color: white;
+        font-size: 35px;
+        font-weight: 400;
+        line-height: 47px;
+        font-family: "Amarante", serif;
+        text-align: center;
+    }
+    .section-com-2 .story p {
+        color: white;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 23px;
+        font-family: "Inter", sans-serif;
+        text-align: center;
+    }
+    .section-com-2 .story button {
+        margin: 5% auto;
+        display: block;
+        font-family: "Amarante", serif;
+        padding: 10px 40px;
+        border: 1px solid #F5D57A;
+        background: transparent;
+        color: #F5D57A;
+    }
+    .section-com-3 .product {
+        color: white;
+        text-align: center;
+        font-size: 35px;
+        font-weight: 400;
+        line-height: 50px;
+        font-family: "Amarante", serif;
+    }
+    .section-com-3 .spicy {
+        width: 100%;
+        height: 550px;
+        border: 1px solid #F5D57A;
+        text-align: center;
+        padding: 40px 0;
+        margin: 2% auto;
+    }
+    .section-com-4 .limited h1 {
+        color: white;
+        font-size: 35px;
+        font-weight: 400;
+        line-height: 47px;
+        font-family: "Amarante", serif;
+        text-align: center;
+    }
+    .section-com-4 .limited p {
+        color: white;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+        font-family: "Inter", sans-serif;
+        text-align: center;
+    }
+    .section-com-4 .limited button {
+        margin: 5% auto 0;
+        display: block;
+        font-family: "Amarante", serif;
+        padding: 10px 40px;
+        border: 1px solid #F5D57A;
+        background: transparent;
+        color: #F5D57A;
+    }
+    .section-com-5 h1 {
+        font-family: "Amarante", serif;
+        text-align: center;
+        font-size: 47px;
+        font-weight: 400;
+        line-height: 67px;
+        color: white;
+    }
+    .section-com-6 .feel h3 {
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 19px;
+        text-align: center;
+        color: white;
+        font-family: "Amarante", serif;
+        margin: 5% 0;
+    }
+    .section-com-6 .feel h1 {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 25px;
+        text-align: center;
+        color: white;
+        font-family: "Amarante", serif;
+        text-transform: uppercase;
+        margin: 5% 0;
+    }
+    .section-com-6 .feel .inpu-sig button {
+        width: 247px;
+        height: 50px;
+        background-color: #40E0D0;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        text-align: center;
+        font-family: "Amarante", serif;
+        margin: 0 0% 0 -1%;
+    }
+    .section-com-6 .heer h1 {
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 38px;
+        text-align: center;
+        color: white;
+        font-family: "Amarante", serif;
+        text-transform: uppercase;
+        margin: 5% 0;
+    }
+    .section-com-6 .container {
+        border: 1px solid #F5D57A;
+        border-radius: 18px;
+        padding: 22px 15px;
+    }
+    .footer-content {
+        display: block;
+        justify-content: end;
+        padding: 7px;
+        color: #fff;
+        /* font-family: Arial, sans-serif; */
+    }
+    .footer-column {
+        width: 100%;
+    }
+    .copy p {
+        font-size: 9px;
+        margin: 0;
+    }
+    .copy .copy-icon {
+        display: flex
+    ;
+        gap: 5px;
+    }
+    .section-com-7 .f-logo h1 {
+        color: #ffffff;
+        font-family: "Amarante", serif;
+        font-size: 50px;
+        font-weight: 400;
+        line-height: 88px;
+    }
+  
+}
+
+@media only screen and (min-width:992px) and (max-width:1200px){
+    .section-com-1 .hero-text h1 {
+        text-align: center;
+        color: white;
+        font-size: 49px;
+        font-weight: 400;
+        line-height: 75px;
+        font-family: "Amarante", serif;
+    }
+    .section-com-5 .testimonial-card {
+        width: 312px;
+        height: 100%;
+        border: 1px solid #F5D57A;
+        text-align: center;
+        padding: 20px 0;
+        margin: 0 0;
+        background-color: transparent;
+        color: white;
+    }
+}
