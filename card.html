@@ -6,35 +6,73 @@
     <title>Cart Detail Page</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<style>
-    body{
-    background-color: #151E25;
-    color: white;
-}
-.text-center-1 a{
-    color: white !important;
-}
-.card-body{
-    background-color: gray;
+    <style>
+        body {
+            background-color: #151E25;
+            color: white;
+        }
+        .text-center-1 a {
+            color: white !important;
+        }
+        .card-body {
+            background-color: gray;
+            border: none;
+        }
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid white;
+            padding-bottom: 10px;
+        }
+        .cart-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        #discount-code {
+    padding: 5px 5px;
     border: none;
-    outline: none;
+    border-radius: 3px;
 }
-</style>
+.discount-btn {
+    padding: 5px 5px;
+    border: none;
+    border-radius: 3px;
+    font-weight: 500;
+    color: white;
+    background: green;
+}
+#dashboardBtn {
+    display: block;
+    font-family: "Amarante", serif;
+    padding: 10px 30px !important;
+    border: 1px solid #F5D57A !important;
+    background: transparent !important;
+    color: #F5D57A !important;
+    text-decoration: none;
+    position: absolute;
+    top: 3%;
+    right: 1%;
+}
+    </style>
+</head>
 <body>
+    <button id="dashboardBtn">Go to Dashboard</button>
+
     <div class="container my-5">
         <header class="text-center mb-5">
             <h1 class="display-6">LUXSMELL London</h1>
         </header>
+
         <div class="row">
             <div class="col-lg-8">
                 <!-- Contact Section -->
                 <section class="mb-4">
                     <h4>Contact</h4>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email or Mobile Phone Number</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter your email or phone number">
-                    </div>
+                    <label for="email" class="form-label">Email or Mobile Phone Number</label>
+                    <input type="email" class="form-control mb-2" id="email" placeholder="Enter your email or phone number">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="offers">
                         <label class="form-check-label" for="offers">Email me with news and offers</label>
@@ -75,16 +113,16 @@
                 <!-- Payment Section -->
                 <section class="mb-4">
                     <h4>Payment</h4>
-                    <img src="./Assets/card-detail.jpg" alt="">
-                    <div class="form-check mb-2">
+                    <img src="./Assets/card-detail.jpg" alt="Payment Methods" class="img-fluid mb-3">
+                    <div class="form-check">
                         <input class="form-check-input" type="radio" name="payment-method" id="bnpl">
                         <label class="form-check-label" for="bnpl">BaadMay | Buy Now, Pay Later</label>
                     </div>
-                    <div class="form-check mb-2">
+                    <div class="form-check">
                         <input class="form-check-input" type="radio" name="payment-method" id="credit-card">
                         <label class="form-check-label" for="credit-card">Debit / Credit Card</label>
                     </div>
-                    <div class="form-check mb-2">
+                    <div class="form-check">
                         <input class="form-check-input" type="radio" name="payment-method" id="cod">
                         <label class="form-check-label" for="cod">Cash on Delivery (COD)</label>
                     </div>
@@ -97,7 +135,7 @@
                 <!-- Billing Address Section -->
                 <section class="mb-4">
                     <h4>Billing Address</h4>
-                    <div class="form-check mb-2">
+                    <div class="form-check">
                         <input class="form-check-input" type="radio" name="billing-address" id="same-address" checked>
                         <label class="form-check-label" for="same-address">Same as shipping address</label>
                     </div>
@@ -111,106 +149,102 @@
             <div class="col-lg-4">
                 <!-- Order Summary -->
                 <div class="container mt-5">
-                    <h1 class="text-center mb-4">Cart Details</h1>
-            
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Item: <span id="productName">JOUR</span></h5>
-                            <img id="product-image" src="" alt="Product" class="product-image mb-3">
-                            <p class="card-text">Price: Rs <span id="productPrice">7,500</span></p>
-                            <p class="card-text">Shipping: Free</p>
-                            <p id="discount-message" class="text-white d-none">Discount Applied: 20%</p>
-                            <h4 id="total" class="card-text"></h4>
-                        
-                            <div id="discount-input" class="d-none mt-3">
-                                <input type="text" id="discount-code" class="form-control" placeholder="Enter Discount Code">
-                                <button id="apply-code" class="btn btn-success w-100 mt-2">Apply</button>
-                            </div>
-                        
-                            <button id="show-discount-input" class="btn btn-primary w-100 mt-3">Apply Discount Code</button>
-                        </div>
-                        
-                    </div>
+                    <h3 class="text-center mb-4">Cart Details</h3>
+                    <div id="card-details"></div>
+                    <h3 id="total">Total: Rs 0</h3>
                 </div>
             </div>
-
-          
-
         </div>
-        <div class="fetti">
-        <footer class="mt-5 text-center-1">
+
+        <footer class="mt-5 text-center-1 text-center">
             <a href="#" class="text-muted me-3">Refund Policy</a>
             <a href="#" class="text-muted me-3">Shipping Policy</a>
             <a href="#" class="text-muted">Privacy Policy</a>
         </footer>
     </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
     <script>
-   
-
-   window.onload = function() {
-    // Retrieve product details from localStorage
-    const productName = localStorage.getItem('productName');
-    const productImage = localStorage.getItem('productImage');
-    const productPrice = localStorage.getItem('productPrice');
-
-    // Ensure productPrice is a valid number
-    let originalTotal = parseFloat(productPrice.replace('$', ''));
-
-    // Log to check initial value
-    console.log(originalTotal);
-
-    // Populate the card with product details
-    document.querySelector('.card-title').innerText = `Item: ${productName}`;
-    document.querySelector('.card-text').innerText = `Price: ${productPrice}`;
-    const productImageElement = document.querySelector('#product-image');
-    productImageElement.src = productImage;
-
-    // Set the image width to 80px
-    productImageElement.style.width = '80px';
-
-    // Discount elements
-    const showDiscountInputButton = document.getElementById('show-discount-input');
-    const discountInput = document.getElementById('discount-input');
-    const discountCodeInput = document.getElementById('discount-code');
-    const applyCodeButton = document.getElementById('apply-code');
-    const discountMessage = document.getElementById('discount-message');
+        document.getElementById("dashboardBtn").addEventListener("click", function () {
+            window.location.href = "dashboard-login.html";
+        });
+    </script>
+    <script>
+window.onload = function () {
+    // ✅ Ensure correct localStorage key (use "cart")
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartContainer = document.getElementById('card-details');
     const totalElement = document.getElementById('total');
+    
+    if (!cartContainer) {
+        console.error('Cart container not found!');
+        return;
+    }
 
-    // Event listener for showing discount input
-    showDiscountInputButton.addEventListener('click', () => {
-        showDiscountInputButton.classList.add('d-none');
-        discountInput.classList.remove('d-none');
+    cartContainer.innerHTML = '';
+    let totalPrice = 0;
+
+    // ✅ Check for empty cart
+    if (cartItems.length === 0) {
+        cartContainer.innerHTML = '<p class="text-center">Your cart is empty.</p>';
+        return;
+    }
+
+    // ✅ Loop through cart items and render them
+    cartItems.forEach((item) => {
+        const { name, image, price } = item;
+
+        if (!name || !image || !price) {
+            console.error('Invalid product data:', item);
+            return;
+        }
+
+        // ✅ Ensure price is a valid number
+        const priceValue = parseFloat(price.replace('$', '').trim()) || 0;
+        totalPrice += priceValue;
+
+        const cardHTML = `
+            <div class="cart-item">
+                <img src="${image}" alt="${name}" class="cart-image">
+                <div>
+                    <h5> ${name}</h5>
+                    <p>Price: Rs: $${priceValue.toFixed(2)}</p>
+                </div>
+            </div>
+        `;
+
+        cartContainer.insertAdjacentHTML('beforeend', cardHTML);
     });
 
-    // Event listener for applying the discount code
-    applyCodeButton.addEventListener('click', () => {
-        const discountCode = discountCodeInput.value.trim();
+    // ✅ Create discount input field, button, and total display
+    const discountHTML = `
+        <div class="discount-section">
+            <p id="discount-total">Total: Rs $${totalPrice.toFixed(2)}</p>
+            <input type="text" id="discount-code" placeholder="Enter coupon code" class="discount-input">
+            <button id="apply-discount" class="discount-btn">Apply Discount</button>
+        </div>
+    `;
 
-        // Check if the discount code is valid
-        if (discountCode === 'muneez') {
-            const discountedTotal = originalTotal * 0.8; // 20% discount
+    cartContainer.insertAdjacentHTML('beforeend', discountHTML);
 
-            // Log to check the discounted total
-            console.log(discountedTotal);
+    // ✅ Handle discount button click
+    document.getElementById('apply-discount').addEventListener('click', function () {
+        let discountTotal = totalPrice;
+        const discountInput = document.getElementById('discount-code').value.trim().toLowerCase();
 
-            // Update the total with the discounted price
-            totalElement.innerHTML = `Total: Rs ${discountedTotal.toFixed(2)}`;
-
-            // Show discount message and hide discount input
-            discountMessage.classList.remove('d-none');
-            discountInput.classList.add('d-none');
+        if (discountInput === 'muneez') {
+            discountTotal = totalPrice * 0.95; // Apply 5% discount
         } else {
-            alert('Invalid Discount Code');
+            alert('Invalid coupon code!'); // Alert if the code is incorrect
         }
+
+        document.getElementById('total').innerHTML = `Total: Rs $${discountTotal.toFixed(2)}`;
     });
 };
 
 
+
+
     </script>
-    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

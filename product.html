@@ -19,13 +19,142 @@
         .product-image {
             max-width: 100px;
         }
-      
+        .cart-cross {
+    display: flex
+;
+    justify-content: end;
+    text-align: end;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #cbb9b9;
+    padding: 5px 5px;
+    border: none;
+    border-radius: 4px;
+}
     </style>
 </head>
 <body>
+
+    <div class="section-nav">
+        <div class="off">
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: transparent; padding: 20px 30px;">
+                <div class="container-fluid">
+                  <!-- Navbar brand remains on the left -->
+                  <a class="navbar-brand" href="#">LUXSMELL</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Aligning all navigation items to the end -->
+                    <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#Aboutus">About us</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#Products">Products</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#Testimonial">Testimonial</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#Contactus">Contact us</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <button id="loginButton" class="hby">Login</button>
+                  <button class="hby" id="cart-btn">🛒 Cart <span id="cart-count">0</span></button>
+                  <div id="cart-panel">
+                    <button onclick="closeCart()" class="cart-cross">❌</button>
+                    <h3>Cart Items</h3>
+                    <div id="cart-items"></div>
+                  
+                    <a href="./card.html"><button type="button" class="btn btn-primary" id="nue">View Cart</button></a>
+                  </div>
+                  
+                </div>
+              </nav>
+              
+    </div>
+    </div>
     <div class="container my-5">
         <!-- Dress Collection Section -->
         <h1 class="text-center mb-4">Creed fragrances</h1>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <img src="./Assets/product-img-4.png" alt="">
+                    <div class="product-info">
+                    <h5>Riddle Perfume For Women</h5>
+                    <p>Fit: length-riddle</p>
+                    <p>Price: $309.99</p>
+                    <button class="btn btn-shop" onclick="showModal('Riddle Perfume For Women', './Assets/product-img-4.png', '$309.99')">Add Now</button>
+                </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <img src="./Assets/product-img-5.png" alt="">
+                    <div class="product-info">
+                    <h5>Earth Perfume For Men</h5>
+                    <p>Fit: length-riddle-men</p>
+                    <p>Price: $500.99</p>
+                    <button class="btn btn-shop" onclick="showModal('Earth Perfume For Men', './Assets/product-img-5.png', '$500.99')">Add Now</button>
+                </div>
+                </div>
+
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <img src="./Assets/product-img-6.png" alt="">
+                    <div class="product-info">
+                    <h5>Water Perfume For Men</h5>
+                    <p>Fit: length-water-men</p>
+                    <p>Price: $1000.99</p>
+                    <button class="btn btn-shop" onclick="showModal('Water Perfume For Men', './Assets/product-img-6.png', '$1000.99')">Add Now</button>
+                </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <img src="./Assets/1-product-img.jpg" alt="">
+                    <div class="product-info">
+                    <h5>FLORAL SPICY</h5>
+                    <p>Fit: length</p>
+                    <p>Price: $209.99</p>
+                    <button class="btn btn-shop" onclick="showModal('FLORAL SPICY', './Assets/1-product-img.jpg', '$209.99')">Add Now</button>
+                </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <img src="./Assets/product-img-2.png" alt="">
+                    <div class="product-info">
+                    <h5>FRUITY OCEANIC</h5>
+                    <p>Fit: length-full</p>
+                    <p>Price: $150.99</p>
+                    <button class="btn btn-shop" onclick="showModal('FRUITY OCEANIC', './Assets/product-img-2.png', '$150.99')">Add Now</button>
+                </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <img src="./Assets/product-img-3.png" alt="">
+                    <div class="product-info">
+                    <h5>WOODY LAVENDER</h5>
+                    <p>Fit: length-gell</p>
+                    <p>Price: $250.99</p>
+                    <button class="btn btn-shop" onclick="showModal('WOODY LAVENDER', './Assets/product-img-3.png', '$250.99')">Add Now</button>
+                </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-4 mb-4">
                 <div class="product-card">
@@ -137,6 +266,9 @@
                 </div>
             </div>
         </div>
+        <div class="row" id="productRow">
+            <!-- Pehle se existing products yahan rahenge -->
+        </div>
     </div>
 
     <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
@@ -155,7 +287,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" id="nue" data-dismiss="modal">Continue Shopping</button>
-                    <a href="./card.html"><button type="button" class="btn btn-primary" id="nue">View Cart</button></a>
+                    <button id="add-to-cart">Add</button>
                 </div>
             </div>
         </div>
@@ -164,28 +296,122 @@
     <div class="ee-mor">
         <button>See More</button>
     </div>
-
+    <script src="app.js"></script>
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
     <script>
-       function showModal(productName, productImage, productPrice) {
-    // Set the product details in the modal
+        // ✅ Check karo user login hai ya nahi
+        if (localStorage.getItem('userLoggedIn') !== 'true') {
+            alert('You must be logged in to access this page!');
+            window.location.href = 'login.html'; // ✅ Agar login nahi hai to wapis login page pe bhej do
+        }
+    </script>
+  <script>
+   let cart = JSON.parse(localStorage.getItem('cart')) || [];
+let cartCount = cart.length;
+document.getElementById("cart-count").innerText = cartCount;
+
+function showModal(productName, productImage, productPrice) {
     document.getElementById('productName').innerText = productName;
     document.getElementById('productImage').src = productImage;
     document.getElementById('productPrice').innerText = `Price: ${productPrice}`;
 
-    // Store the product information in localStorage
-    localStorage.setItem('productName', productName);
-    localStorage.setItem('productImage', productImage);
-    localStorage.setItem('productPrice', productPrice);
+    let product = {
+        name: productName,
+        image: productImage,
+        price: productPrice
+    };
 
-    // Open the modal
+    // Product add karo aur localStorage update karo
+    cart.push(product);
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Cart count update karo
+    cartCount++;
+    document.getElementById("cart-count").innerText = cartCount;
+
     $('#productModal').modal('show');
 }
 
-    </script>
+// 🛒 Cart Button pe click event
+document.getElementById("cart-btn").addEventListener("click", function () {
+    let cartItemsContainer = document.getElementById("cart-items");
+    cartItemsContainer.innerHTML = "";
+
+    cart.forEach((item, index) => {
+        let itemDiv = document.createElement("div");
+        itemDiv.classList.add("cart-item");
+        itemDiv.innerHTML = `
+          <img src="${item.image}" width="50">
+          <span>${item.name}</span>
+          <span>${item.price}</span>
+          <button onclick="removeFromCart(${index})">❌</button>
+        `;
+        cartItemsContainer.appendChild(itemDiv);
+    });
+
+    document.getElementById("cart-panel").style.right = "0";
+});
+
+// 🗑️ Remove from Cart
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    document.getElementById("cart-count").innerText = cart.length;
+    document.getElementById("cart-btn").click(); // Refresh cart display
+}
+
+// 🔒 Close Cart
+function closeCart() {
+    document.getElementById("cart-panel").style.right = "-300px";
+}
+
+  </script>
+
+  <!-- Add-product-Admin-panel -->
+  <script>
+    function displayProducts() {
+        let products = JSON.parse(localStorage.getItem("products")) || [];
+        let productRow = document.getElementById("productRow");
+
+        if (products.length === 0) {
+            return; // Agar products nahi hain to kuch mat karo
+        }
+
+        // New Row Create Karna
+        let newRow = document.createElement("div");
+        newRow.classList.add("row");
+
+        products.forEach(product => {
+            let col = document.createElement("div");
+            col.classList.add("col-md-4", "mb-4"); // Bootstrap column
+
+            col.innerHTML = `
+                <div class="product-card">
+                    <img src="${product.image}" alt="${product.name}">
+                    <div class="product-info">
+                        <h5>${product.name}</h5>
+                        <p>Fit: Spacious</p>  <!-- Ye generic text hai, isko customize kar sakte ho -->
+                        <p>Price: $${product.price}</p>
+                        <button class="btn btn-shop" onclick="showModal('${product.name}', '${product.image}', '$${product.price}')">Add Now</button>
+                    </div>
+                </div>
+            `;
+
+            newRow.appendChild(col);
+        });
+
+        // Pehle se jo row hai uske niche add karna
+        productRow.parentNode.appendChild(newRow);
+    }
+
+    // Page Load hone par products dikhane ke liye
+    window.onload = displayProducts;
+</script>
+  <!-- Add-product-Admin-panel -->
+  
+
 </body>
 </html>

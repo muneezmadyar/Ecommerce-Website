@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Login</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="email"]:focus, input[type="password"]:focus {
+            border-color: #5b9bd5;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #5b9bd5;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #3e80b8;
+        }
+
+        .alert {
+            color: #e74c3c;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .forgot-password a {
+            color: #5b9bd5;
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login to Dashboard</h2>
+        <input type="email" id="login-email" placeholder="Enter Email">
+        <input type="password" id="login-password" placeholder="Enter Password">
+        <button id="loginBtn">Login</button>
+
+        <div class="alert" id="alert-message"></div>
+
+        <div class="forgot-password">
+            <a href="./sign-up.html">Forgot Password?</a>
+        </div>
+    </div>
+
+    <script>
+        function validateLogin() {
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            const alertMessage = document.getElementById('alert-message');
+
+            const savedEmail = localStorage.getItem('userEmail');
+            const savedPassword = localStorage.getItem('userPassword');
+
+            // Admin login check
+            if (email === "admin@gmail.com" && password === "123") {
+                alert('Admin Login Successful! Redirecting to Admin Dashboard...');
+                window.location.href = 'admin-dashboard.html';
+                return;
+            }
+
+            // Normal user login check
+            if (email === savedEmail && password === savedPassword) {
+                localStorage.setItem('userLoggedIn', 'true');
+                alert('Login Successful! Redirecting to Dashboard...');
+                window.location.href = 'dashboard.html';
+            } else {
+                alertMessage.textContent = 'Invalid email or password. Please try again.';
+            }
+        }
+
+        document.getElementById("loginBtn").addEventListener("click", validateLogin);
+    </script>
+</body>
+</html>

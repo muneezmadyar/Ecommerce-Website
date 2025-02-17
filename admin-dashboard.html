@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        /* Custom styles for sidebar */
+        .sidebar {
+            background-color: #2c3e50;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            transition: left 0.3s;
+            z-index: 1000;
+        }
+
+        .sidebar a {
+            color: #ecf0f1;
+            padding: 20px 15px;
+            text-decoration: none;
+            display: block;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #34495e;
+        }
+
+        .sidebar .logo a {
+            font-size: 40px;
+            font-weight: 700;
+            color: white;
+            border-bottom: 1px solid white;
+            padding: 15px 15px 0;
+        }
+
+        .sidebar .logout-btn, .sidebar .setting-btn {
+            width: 50%;
+            padding: 10px 20px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s;
+            margin: 2% 0;
+        }
+
+        .sidebar .setting-btn {
+            background-color: #3498db; /* Blue color for settings */
+        }
+
+        .sidebar .setting-btn:hover,
+        .sidebar .logout-btn:hover {
+            background-color: #c0392b;
+        }
+
+        /* Main content area */
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            transition: margin-left 0.3s;
+        }
+
+        .main-content h2 {
+            color: #34495e;
+        }
+
+        /* For smaller screens (responsive) */
+      
+
+        /* Position logout and setting button at bottom */
+        .sidebar .button-container {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            width: 100%;
+            padding: 0 15px;
+        }
+
+        /* Close (X) Button for Sidebar */
+      
+        .close-btn {
+    display: none;
+}
+        /* Tab content styles */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+/* <---------------------seacrh-bar---------------------------> */
+.contenir{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-bottom: 1%;
+}
+
+
+
+
+
+.search{
+    box-shadow:0px 0px 20px 1px #ffffff ;
+    border: 1px solid #2c3e50;
+    border-radius: 30px 0 0 30px;
+    padding: 0 10px 0 10px;
+    text-align: center;
+    color: black;
+    height: 50px;
+    width: 300px;
+    font-size: 25px;
+    font-weight: 1000;
+}
+.search::selection{
+background-color: red;
+color: white;
+}
+.search:focus{
+    border: 1px solid #2c3e50;
+outline: 0;
+}
+.search:hover{
+cursor: text;
+}
+
+
+
+
+
+.search-btn{
+    transition: 0.2s ease-in-out;
+    /* box-shadow:0px 0px 0px 1px #2c3e50 ; */
+    border: 0;
+    border-radius: 0 30px 30px 0;
+    padding: 0 10px 0 10px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    position: relative;
+    background-color: #2c3e50;
+    height: 50px;
+    width: 70px;
+    font-size: 25px;
+    font-weight: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-btn:hover{
+transition: 0.2s ease-in-out;
+background-color: #2c3e50;
+/* box-shadow:0px 0px 20px 1px #2c3e50 ; */
+font-size: 30px;
+font-weight: 800;
+cursor: pointer;
+}
+.main-icos{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.icos{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+.icos a {
+    color: #2c3e50;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    gap: 5px;
+}
+/* <---------------------seacrh-bar---------------------------> */
+/* <---------------------circle-type---------------------------> */
+main {
+  width: 500px;
+  margin: 10px auto;
+  padding: 10px 20px 30px;
+  background: #FFF;
+  /* box-shadow: 0 3px 5px rgba(0,0,0,0.2); */
+}
+p {
+  margin-top: 2rem;
+  font-size: 13px;
+}
+#bar-chart {
+  width: 500px;
+  height: 300px;
+  position: relative;
+}
+#line-chart {
+  width: 500px;
+  height: 300px;
+  position: relative;
+}
+#bar-chart::before, #line-chart::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 240px;
+  height: 30px;
+  left: 155px;
+  top: 254px;
+  background: #FAFAFA;
+  box-shadow: 1px 1px 0 0 #DDD;
+}
+#pie-chart {
+  width: 500px;
+  height: 250px;
+  position: relative;
+}
+#pie-chart::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 115px;
+  left: 315px;
+  top: 0;
+  background: #FAFAFA;
+  box-shadow: 1px 1px 0 0 #DDD;
+}
+#pie-chart::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 260px;
+  left: 70px;
+  width: 170px;
+  height: 2px;
+  background: rgba(0,0,0,0.1);
+  border-radius: 50%;
+  box-shadow: 0 0 3px 4px rgba(0,0,0,0.1);
+}
+
+#shah{
+    margin: 5% 0 0;
+}
+/* <---------------------circle-type---------------------------> */
+/* <---------------------table-styling---------------------------> */
+.styled-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 1.1em;
+        text-align: left;
+    }
+    .styled-table th, .styled-table td {
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+    }
+    .styled-table th {
+        background-color: #2c3e50;
+        color: white;
+    }
+    .styled-table .btn {
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    .btn-edit {
+        background-color: #ffa500;
+        color: white;
+    }
+    .btn-delete {
+        background-color: #f44336;
+        color: white;
+    }
+    
+    /* Modal Styling */
+    .modal {
+        display: none;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        width: 50%;
+        height: auto;
+    }
+    .modal-content {
+        text-align: center;
+    }
+    .quantity-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin: 10px 0;
+    }
+    .quantity-controls button {
+        width: 7%;
+        padding: 5px 10px;
+        font-size: 20px;
+        font-weight: 700;
+        cursor: pointer;
+        border: none;
+        background-color: #2c3e50;
+        color: white;
+    }
+    #save-changes{
+        width: 20%;
+        height: 40px;
+        font-size: 20px;
+        font-weight: 700;
+        background-color: #2c3e50;
+        border: none;
+        margin: 0 auto;
+        color: white;
+    }
+    .keroin{
+        display: flex;
+        justify-content: end;
+    }
+    .sicro{
+    width: 5%;
+    font-size: 18px;
+    font-weight: 700;
+    height: 32px;
+    border-radius: 0px;
+    background: red;
+    color: white;
+    border: none;
+    }
+/* <---------------------table-styling---------------------------> */
+/* <---------------------input-message-styling---------------------------> */
+.messoi {
+            width: 100%;
+            height: 500px;
+            padding: 10px;
+            font-size: 18px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            box-sizing: border-box;
+            resize: none;
+            margin-top: 2%;
+        }
+
+
+        .messoi::placeholder {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 16px;
+            color: #777;
+        }
+
+        .likjo button {
+            margin-top: 10px;
+            padding: 12px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .likjo button:hover {
+            background-color: #0056b3;
+        }
+/* <---------------------input-message-styling---------------------------> */
+
+/* <--------------------Admin-Add-product---------------> */
+.upload-product {
+        width: 100%;
+        max-width: 500px;
+        margin: 50px auto;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .title {
+        text-align: center;
+        font-size: 1.8em;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-label {
+        display: block;
+        font-size: 1em;
+        color: #555;
+        margin-bottom: 5px;
+    }
+
+    .form-input {
+        width: 100%;
+        padding: 12px;
+        font-size: 1em;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        outline: none;
+        box-sizing: border-box;
+        transition: border-color 0.3s;
+    }
+
+    .form-input:focus {
+        border-color: #007bff;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #007bff;
+        color: #fff;
+        font-size: 1.1em;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .submit-btn:hover {
+        background-color: #0056b3;
+    }
+/* <--------------------Admin-Add-product---------------> */
+/* <--------------------Admin-table-product---------------> */
+table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        td img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .no-data {
+            text-align: center;
+            padding: 20px;
+            font-size: 18px;
+            color: #555;
+        }
+
+        /* Total price section */
+        .total-section {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            table {
+                width: 100%;
+            }
+            td img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+/* <--------------------Admin-table-product---------------> */
+        @media (max-width: 320px) {
+            .sidebar {
+                width: 200px;
+            }
+        }
+
+        @media (max-width: 990px) {
+            .sidebar {
+                left: -250px;
+            }
+
+            .sidebar.open {
+                left: 0;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            
+            .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 25px;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;    
+            display: block;
+        }
+        }
+
+#swendw{
+    margin: 2% 0 0;
+}
+      
+    </style>
+</head>
+<body>
+    <!-- <-------side-bar--------->
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" id="closeSidebarBtn">×</button>
+        <div class="logo">
+            <a href="#">LUXSMELL</a>
+        </div>
+        <a href="#" id="homeBtn">Add Product</a>
+        <a href="#" id="profileBtn">Sales</a>
+        <a href="#" id="contactBtn">Client Messages</a>
+        
+        <!-- Setting and Logout buttons -->
+        <div class="button-container">
+            <button class="setting-btn">Settings</button>
+            <button class="logout-btn" id="logoutBtn">Logout</button>
+        </div>
+    </div>
+    <!-- <-------side-bar--------->
+
+    <!-- tabs -->
+    <div class="main-content" id="main-content">
+        <button class="btn btn-primary" id="sidebarToggleBtn" style="position: absolute; top: 20px; left: 20px;">☰</button>
+        
+        <!-- Tab content -->
+        <div class="tab-content" id="homeContent">
+            <div class="main-icos">
+                <div class="icos">
+                    <a href="./product.html"><i class="bi bi-cart-check-fill"></i>Shop Now</a>
+                    <a href="./card.html"><i class="bi bi-credit-card-2-front-fill"></i>Add To Card</a>
+                </div>
+            
+                        <div class="contenir">
+                            
+            
+                            <input type="text" class="search" id="search-inp" placeholder="Search...">
+                        
+                            <button class="search-btn"  id="search-inp-btn">&#x027A4;</button>
+                        
+                        </div>
+                    </div>
+
+              <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="upload-product">
+                            <h3 class="title">Upload Your Product</h3>
+                            <form id="productForm" class="form">
+                                <div class="form-group">
+                                    <label for="productImage" class="form-label">Product Image</label>
+                                    <input type="file" id="productImage" accept="image/*" class="form-input">
+                                </div>
+                        
+                                <div class="form-group">
+                                    <label for="productName" class="form-label">Product Name</label>
+                                    <input type="text" id="productName" placeholder="Enter Product Name" class="form-input">
+                                </div>
+                        
+                                <div class="form-group">
+                                    <label for="productPrice" class="form-label">Product Price</label>
+                                    <input type="number" id="productPrice" placeholder="Enter Product Price" class="form-input">
+                                </div>
+                        
+                                <button type="button" onclick="saveProduct()" class="submit-btn">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            
+                  
+                    
+        </div>
+        <div class="tab-content" id="profileContent">
+            <div class="main-icos">
+                <div class="icos">
+                    <a href="./product.html"><i class="bi bi-cart-check-fill"></i>Shop Now</a>
+                    <a href="./card.html"><i class="bi bi-credit-card-2-front-fill"></i>Add To Card</a>
+                </div>
+            
+                        <div class="contenir">
+                            
+            
+                            <input type="text" class="search" id="search-inp" placeholder="Search...">
+                        
+                            <button class="search-btn"  id="search-inp-btn">&#x027A4;</button>
+                        
+                        </div>
+                    </div>
+            
+                      <div class="conatiner" id="swendw">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <table id="productTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Image</th>
+                                            <th>Name</th>
+                                            <th>Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Product rows will be inserted here -->
+                                    </tbody>
+                                </table>
+                            
+                                <div class="no-data" id="noDataMessage" style="display:none;">
+                                    No products available.
+                                </div>
+                            
+                                <div class="total-section" id="totalSection" style="display:none;">
+                                    Total Price: Rs <span id="totalPrice">0.00</span>
+                                </div>
+                            
+                            </div>
+                        </div>
+                      </div>
+            
+            
+         </div>
+        
+
+        <div class="tab-content" id="contactContent">
+            <div class="main-icos">
+                <div class="icos">
+                    <a href="./product.html"><i class="bi bi-cart-check-fill"></i>Shop Now</a>
+                    <a href="./card.html"><i class="bi bi-credit-card-2-front-fill"></i>Add To Card</a>
+                </div>
+            
+                        <div class="contenir">
+                            
+            
+                            <input type="text" class="search" id="search-inp" placeholder="Search...">
+                        
+                            <button class="search-btn"  id="search-inp-btn">&#x027A4;</button>
+                        
+                        </div>
+                    </div>
+                    <p id="displayMessage"></p>
+               
+
+        </div>
+    </div>
+    <!-- tabs -->
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script>
+        // Toggle Sidebar (only on small screens)
+        if (window.innerWidth <= 990) {
+            document.getElementById("sidebarToggleBtn").addEventListener("click", function () {
+                document.getElementById("sidebar").classList.toggle("open");
+            });
+    
+            // Close Sidebar when "X" button is clicked
+            document.getElementById("closeSidebarBtn").addEventListener("click", function () {
+                document.getElementById("sidebar").classList.remove("open");
+            });
+        } else {
+            // Sidebar is always open on larger screens
+            document.getElementById("sidebar").classList.add("open");
+        }
+    
+        // Logout functionality
+        document.getElementById("logoutBtn").addEventListener("click", function () {
+            localStorage.removeItem('userLoggedIn'); // Log out the user
+            window.location.href = "dashboard-login.html"; // Redirect to login page
+        });
+    
+        // Show content based on sidebar button clicks
+        document.getElementById("homeBtn").addEventListener("click", function () {
+            setActiveTab("homeContent");
+        });
+    
+        document.getElementById("profileBtn").addEventListener("click", function () {
+            setActiveTab("profileContent");
+        });
+    
+        document.getElementById("contactBtn").addEventListener("click", function () {
+            setActiveTab("contactContent");
+        });
+    
+        function setActiveTab(contentId) {
+            // Hide all content
+            const allContents = document.querySelectorAll(".tab-content");
+            allContents.forEach(function(content) {
+                content.classList.remove("active");
+            });
+    
+            // Show the selected content
+            document.getElementById(contentId).classList.add("active");
+        }
+    
+        // Set default active tab
+        setActiveTab("homeContent");
+    </script>
+
+    <!-- <Add-to-product-js> -->
+        <script>
+            function saveProduct() {
+                const imageInput = document.getElementById("productImage");
+                const name = document.getElementById("productName").value;
+                const price = document.getElementById("productPrice").value;
+        
+                if (!imageInput.files.length || name.trim() === "" || price.trim() === "") {
+                    alert("Please fill all fields and select an image.");
+                    return;
+                }
+        
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    const imageUrl = event.target.result; // Convert image to Base64
+        
+                    // Create product object
+                    const product = {
+                        image: imageUrl,
+                        name: name,
+                        price: price
+                    };
+        
+                    // Get existing products from localStorage
+                    let products = JSON.parse(localStorage.getItem("products")) || [];
+        
+                    // Add new product to array
+                    products.push(product);
+        
+                    // Save back to localStorage
+                    localStorage.setItem("products", JSON.stringify(products));
+        
+                    alert("Product saved successfully!");
+        
+                    // Clear the input fields after product is saved
+                    document.getElementById("productImage").value = ""; // Clear image input
+                    document.getElementById("productName").value = ""; // Clear product name
+                    document.getElementById("productPrice").value = ""; // Clear product price
+                };
+        
+                reader.readAsDataURL(imageInput.files[0]); // Convert image to Base64
+            }
+        </script>
+        
+        
+    <!-- <Add-to-product-js> -->
+    <!-- <table-to-product-js> -->
+        <script>
+            window.onload = function() {
+                // ✅ Get products from localStorage (same key used in cart)
+                const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+                const tableBody = document.getElementById('productTable').getElementsByTagName('tbody')[0];
+                const noDataMessage = document.getElementById('noDataMessage');
+                const totalSection = document.getElementById('totalSection');
+                const totalPriceElement = document.getElementById('totalPrice');
+    
+                let totalPrice = 0;
+    
+                // Check if cart is empty
+                if (cartItems.length === 0) {
+                    noDataMessage.style.display = 'block';
+                    return;
+                }
+    
+                // Loop through cart items and populate table
+                cartItems.forEach(item => {
+                    const { name, image, price } = item;
+    
+                    // Ensure price is a valid number
+                    const priceValue = parseFloat(price.replace('$', '').trim()) || 0;
+                    totalPrice += priceValue;
+    
+                    // Create a new row for each item
+                    const row = tableBody.insertRow();
+    
+                    // Insert cells into the row
+                    const cell1 = row.insertCell(0);
+                    const cell2 = row.insertCell(1);
+                    const cell3 = row.insertCell(2);
+    
+                    // Set the content for each cell
+                    cell1.innerHTML = `<img src="${image}" alt="${name}">`;
+                    cell2.innerHTML = name;
+                    cell3.innerHTML = price;
+                });
+    
+                // Show total price section and update the total price
+                totalSection.style.display = 'block';
+                totalPriceElement.textContent = totalPrice.toFixed(2);
+            };
+        </script>
+    <!-- <table-to-product-js> -->
+    <!-- <client-message> -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                let message = localStorage.getItem("userMessage");
+                if (message) {
+                    document.getElementById("displayMessage").textContent = message;
+                } else {
+                    document.getElementById("displayMessage").textContent = "No messages found!";
+                }
+            });
+        </script>
+    <!-- <client-message> -->
+    
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

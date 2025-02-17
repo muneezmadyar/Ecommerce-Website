@@ -72,18 +72,20 @@
             <p>Don't have an account? <a href="./sign-up.html">Sign Up</a></p>
         </div>
     </div>
+    <script src="app.js"></script>
     <script>
         function validateLogin() {
             const email = document.getElementById('login-email').value;
             const password = document.getElementById('login-password').value;
-
+    
             const savedEmail = localStorage.getItem('userEmail');
             const savedPassword = localStorage.getItem('userPassword');
-
+    
             if (email === savedEmail && password === savedPassword) {
-                alert('Login Successful! Welcome to the website.');
-                // Redirect to your website's homepage
-                window.location.href = 'index.html';
+                localStorage.setItem('userLoggedIn', 'true'); // ✅ User ko logged-in mark kar diya
+    
+                alert('Login Successful! Redirecting to products page...');
+                window.location.href = 'product.html'; // ✅ Product page pe redirect
             } else {
                 alert('Invalid email or password. Please try again.');
             }

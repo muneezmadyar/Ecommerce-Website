@@ -89,16 +89,20 @@
             <p>Already have an account? <a href="login.html">Login</a></p>
         </div>
     </div>
+    <script src="app.js"></script>
     <script>
         function saveUserData() {
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
-
+    
             if (name && email && password) {
                 localStorage.setItem('userEmail', email);
                 localStorage.setItem('userPassword', password);
-                window.location.href = 'login.html'
+                localStorage.setItem('userLoggedIn', 'false'); // ✅ Pehle user logged-in nahi hoga
+    
+                alert('Sign-up successful! Please login.');
+                window.location.href = 'login.html'; // ✅ Login page pe le jayega
             } else {
                 alert('Please fill in all fields.');
             }

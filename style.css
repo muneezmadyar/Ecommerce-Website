@@ -569,7 +569,16 @@ body{
     background: transparent !important;
     color: #F5D57A !important;
 }
-
+.hby{
+    /* margin: 5% auto 0 !important; */
+    /* display: block; */
+    font-family: "Amarante", serif;
+    padding: 10px 40px !important;
+    border: 1px solid #F5D57A !important;
+    background: transparent !important;
+    color: #F5D57A !important;
+    margin: 0 0 0 1%;
+}
 .btn-shop:hover {
     /* background-color: #333; */
 }
@@ -585,6 +594,18 @@ body{
 }
 #nue{
     /* margin: 5% auto 0 !important; */
+    display: block;
+    font-family: "Amarante", serif;
+    padding: 10px 30px !important;
+    border: 1px solid #F5D57A !important;
+    background: transparent !important;
+    color: #F5D57A !important;
+    text-decoration: none;
+}
+#nue:hover{
+    text-decoration: none !important;
+}
+#add-to-cart{
     display: block;
     font-family: "Amarante", serif;
     padding: 10px 30px !important;
@@ -853,3 +874,26 @@ body{
         color: white;
     }
 }
+
+/* <--------------------------------product.html-------------------------------> */
+#cart-panel {
+    position: fixed;
+    right: -300px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background: #414e58;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    transition: right 0.3s ease;
+    z-index: 1;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+/* <--------------------------------product.html-------------------------------> */
